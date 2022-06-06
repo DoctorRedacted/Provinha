@@ -7,4 +7,4 @@ const con = await mysql.createConnection({
     database: process.env.MYSQL_BD
 });
 
-export default { con };
+export { con };

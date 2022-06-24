@@ -6,10 +6,11 @@ const server = Router();
 server.post('/pet', async (req, resp) => {
     try {
         const get = req.body;
+        if(!get.nome || !get.nome.trim()) throw new Error('NÃO COLOQUE CAMPOS NULOS DOIDÃO!!');
         const snd = await inserir(get); 
         resp.status(201).send({snd});
     } catch (err) {
-        resp.status(400).send({erro:err.message});
+        resp.status(400).send({errp: "ACHOU QUE EU ESTAVA BRINCANDO"});
     }
 })
 

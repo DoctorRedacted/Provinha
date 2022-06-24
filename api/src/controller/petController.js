@@ -15,7 +15,7 @@ server.post('/pet', async (req, resp) => {
 
 server.get('/pet', async (req, resp) => {
     const snd = await showing();
-    resp.send({snd});
+    resp.send(snd);
 })
 
 export default server;
